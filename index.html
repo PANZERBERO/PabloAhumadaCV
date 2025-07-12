@@ -44,6 +44,10 @@
         .timeline-item:hover .timeline-point {
             @apply border-cyan-600;
         }
+        /* Estilo para el botón de WhatsApp */
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="bg-slate-200 font-body text-gray-800">
@@ -99,7 +103,7 @@
                             </p>
                              <p>
                                 Me dedico con constancia y compromiso a mantener esta maquinaria en funcionamiento todos los días del año, incluidos fines de semana y feriados, para asegurar que la experiencia de marca nunca se detenga, incluso cuando el público no lo percibe de forma explícita.
-                            </p>
+                             </p>
                         </div>
                     </div>
                     
@@ -216,12 +220,13 @@
 
             </div>
         </div>
+
+        <!-- Botón de WhatsApp fijo -->
+        <a href="https://wa.me/+56978542576?text=¡Hola! Estoy interesado en tu CV." target="_blank" class="fixed bottom-4 right-4 bg-[#25D366] text-white font-display uppercase tracking-wider py-2 px-4 rounded-md hover:bg-[#128C7E] transition-colors duration-300 flex items-center shadow-lg z-50 whatsapp-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="w-6 h-6 mr-2">
+            ¡Escríbeme!
+        </a>
     </main>
-<a href="https://wa.me/56978542576" target="_blank" style="text-decoration:none;">
-  <button style="background-color:#25d366;color:white;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;font-size:16px;">
-    ¡Escríbeme!
-  </button>
-</a>
 
 </body>
 </html>
