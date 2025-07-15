@@ -8,25 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         .font-display {
             font-family: 'Roboto Condensed', sans-serif;
         }
         .font-body {
             font-family: 'Roboto', sans-serif;
-        }
-        .card-image {
-            transition: transform 0.4s ease-out, filter 0.4s ease-out;
-        }
-        .card:hover .card-image {
-            transform: scale(1.1);
-            filter: brightness(1);
-        }
-        .card-overlay {
-            transition: background-color 0.4s ease-out;
-        }
-        .card:hover .card-overlay {
-            background-color: rgba(14, 116, 144, 0.5); /* Cyan-700 with opacity */
         }
         /* Estilos para la línea de tiempo */
         .timeline-item {
@@ -44,189 +32,354 @@
         .timeline-item:hover .timeline-point {
             @apply border-cyan-600;
         }
-        /* Estilo para el botón de WhatsApp */
-        .whatsapp-button:hover {
-            transform: scale(1.05);
+        /* Estilos para las páginas internas */
+        .page-section {
+            display: block; /* Por defecto se muestran */
+        }
+        .page-section.hidden {
+            display: none; /* Se ocultan con la clase hidden */
         }
     </style>
 </head>
 <body class="bg-slate-200 font-body text-gray-800">
 
-    <main class="w-full max-w-5xl mx-auto p-4">
-        
-        <div class="bg-white rounded-lg shadow-2xl overflow-hidden my-10 border-4 border-slate-300">
-            
-            <!-- Banner Principal -->
-            <div>
-                <img src="https://github.com/PANZERBERO/PabloAhumadaCV/raw/main/Header.jpg" 
-                     alt="Pablo Ahumada - Fábrica de Soluciones Digitales" 
-                     class="w-full h-auto"
-                     onerror="this.onerror=null;this.src='https://placehold.co/1200x675/334155/FFFFFF?text=Imagen+no+disponible';">
-            </div>
-
-            <div class="p-8 md:p-12">
+    <!-- Contenedor Principal de la Página -->
+    <div id="main-page" class="page-section">
+        <main class="w-full max-w-5xl mx-auto p-4">
+            <div class="bg-white rounded-lg shadow-2xl overflow-hidden my-10 border-4 border-slate-300">
                 
-                <h1 class="font-display text-4xl md:text-5xl font-bold text-center text-slate-800 uppercase tracking-wider">¡Bienvenid@ a mi fábrica!</h1>
+                <!-- Banner Principal -->
+                <div>
+                    <img src="https://github.com/PANZERBERO/PabloAhumadaCV/raw/main/Header.jpg" 
+                         alt="Pablo Ahumada - Fábrica de Soluciones Digitales" 
+                         class="w-full h-auto"
+                         onerror="this.onerror=null;this.src='https://placehold.co/1200x675/334155/FFFFFF?text=Imagen+no+disponible';">
+                </div>
 
-                <!-- Sección de Perfil -->
-                <div class="mt-10 max-w-3xl mx-auto">
-                    
-                    <div class="text-center">
-                        <h2 class="font-display text-2xl font-bold text-slate-700 uppercase tracking-wide">Soy Pablo Ahumada, Publicista</h2>
-                        <p class="font-display text-xl text-cyan-600 uppercase tracking-wider mt-1">Social Media | Análisis de Datos</p>
-                    </div>
+                <div class="p-8 md:p-12">
+                    <h1 class="font-display text-4xl md:text-5xl font-bold text-center text-slate-800 uppercase tracking-wider">¡Bienvenid@ a mi fábrica!</h1>
 
-                    <div class="mt-8 text-left space-y-4 text-slate-800 leading-relaxed font-body bg-slate-100 p-6 rounded-md border border-slate-300">
-                        <p class="text-lg">
-                           ¿Quieres una marca más ágil, con canales bien engrasados, métricas claras y decisiones rápidas?
-                           Mi trabajo consiste en afinar tu sistema digital para que no solo funcione, sino que rinda al máximo.
+                    <!-- Sección de Perfil -->
+                    <div class="mt-10 max-w-3xl mx-auto">
+                        <div class="text-center">
+                            <h2 class="font-display text-2xl font-bold text-slate-700 uppercase tracking-wide">Soy Pablo Ahumada, Publicista</h2>
+                            <p class="font-display text-xl text-cyan-600 uppercase tracking-wider mt-1">Social Media | Análisis de Datos</p>
+                        </div>
+                        <div class="mt-8 text-left space-y-4 text-slate-800 leading-relaxed font-body bg-slate-100 p-6 rounded-md border border-slate-300">
+                            <p class="text-lg">
+                               ¿Quieres una marca más ágil, con canales bien engrasados, métricas claras y decisiones rápidas?
+                               Mi trabajo consiste en afinar tu sistema digital para que no solo funcione, sino que rinda al máximo.
+                            </p>
+                            <p>
+                               Desde la trazabilidad de leads hasta la atención al cliente y los reportes mensuales, opero como un <strong class="text-slate-900">centro de control que conecta las áreas críticas</strong> de tu marca, detectando fallos, corrigiendo desvíos y mejorando el rendimiento de punta a punta.
+                            </p>
+                        </div>
+                        <div class="mt-10 pt-6 border-t border-slate-300">
+                            <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">¿Por qué lo pienso como una fábrica?</h3>
+                            <div class="space-y-4 text-slate-800 leading-relaxed font-body">
+                                <p>Cuento con 15 años de experiencia en Social Media, con un mayor enfoque en el sector automotriz.</p>
+                                <p>Mi enfoque va más allá de publicar contenido o responder mensajes: diseño sistemas integrados que convierten cada punto de contacto con el cliente en una pieza útil para análisis y acción. Cada interacción se convierte en insumo para tomar mejores decisiones, optimizar recursos y fortalecer el vínculo entre marca y audiencia.</p>
+                                <p>Pienso mi trabajo como una fábrica por la forma en que cada parte cumple una función precisa dentro de una estructura interconectada: desde el análisis del sentimiento en redes sociales hasta el cruce con datos comerciales y la retroalimentación hacia los equipos internos. No hay movimientos aislados; todo responde a una lógica de ensamblaje y mejora continua.</p>
+                                <p>He trabajado con marcas como General Motors y Americar, estructurando flujos que alinean comunicación y ventas, generando reportes útiles, accionables y relevantes. El objetivo es garantizar que lo que sucede en la superficie (una publicación, una consulta, un reclamo) tenga impacto positivo en la profundidad del negocio.</p>
+                                <p>Me dedico con constancia y compromiso a mantener esta maquinaria en funcionamiento todos los días del año, incluidos fines de semana y feriados, para asegurar que la experiencia de marca nunca se detenga, incluso cuando el público no lo percibe de forma explícita.</p>
+                            </div>
+                        </div>
+                        <p class="italic text-center mt-8">
+                           Esto es lo que llamo mi fábrica: un sistema en evolución constante, afinado para que cada engranaje contribuya al avance de la marca.
                         </p>
-                        <p>
-                           Desde la trazabilidad de leads hasta la atención al cliente y los reportes mensuales, opero como un <strong class="text-slate-900">centro de control que conecta las áreas críticas</strong> de tu marca, detectando fallos, corrigiendo desvíos y mejorando el rendimiento de punta a punta.
+                    </div>
+
+                    <!-- Mis Áreas de Producción -->
+                    <div class="mt-12 pt-8 border-t-2 border-slate-300">
+                        <div class="text-center">
+                            <h3 class="font-display text-3xl font-bold text-slate-800 uppercase tracking-wider">Mis Áreas de Producción</h3>
+                            <p class="text-lg text-slate-600 -mt-1 mb-10">Del taller a la pista: estos son los sistemas que pongo en marcha.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-slate-50 border-2 border-slate-300 rounded-lg p-6 flex flex-col text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+                                <img src="https://github.com/PANZERBERO/PabloAhumadaCV/raw/main/Imagen%20SAC.png" alt="Ilustración de Pablo con auriculares en el centro de mensajes" class="rounded-md mb-6 w-10/12 h-auto mx-auto">
+                                <h4 class="font-display text-2xl font-bold text-slate-800 uppercase">Centro de Mensajes</h4>
+                                <p class="font-body text-base font-semibold text-cyan-600 mb-3">Atención SAC</p>
+                                <p class="font-body text-slate-600 text-base flex-grow">Clasifico, etiqueto y respondo cada mensaje con el tono adecuado según la campaña y el tipo de consulta.</p>
+                                <button data-target="page-sac" class="nav-button mt-6 bg-slate-800 text-white font-display uppercase tracking-wider py-2 px-4 rounded-md hover:bg-cyan-600 transition-colors duration-300">Inspeccionar Sistema</button>
+                            </div>
+                            <div class="bg-slate-50 border-2 border-slate-300 rounded-lg p-6 flex flex-col text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+                                <img src="https://github.com/PANZERBERO/PabloAhumadaCV/raw/main/Imagen%20Gesti%C3%B3n%20de%20Leads.png" alt="Ilustración de Pablo con cronómetro para trazabilidad de leads" class="rounded-md mb-6 w-10/12 h-auto mx-auto">
+                                <h4 class="font-display text-2xl font-bold text-slate-800 uppercase">Trazabilidad de Leads</h4>
+                                <p class="font-body text-base font-semibold text-cyan-600 mb-3">Dashboard Comercial</p>
+                                <p class="font-body text-slate-600 text-base flex-grow">Permite el seguimiento y conversión de clientes desde redes sociales hasta la venta final.</p>
+                                <button data-target="page-leads" class="nav-button mt-6 bg-slate-800 text-white font-display uppercase tracking-wider py-2 px-4 rounded-md hover:bg-cyan-600 transition-colors duration-300">Inspeccionar Sistema</button>
+                            </div>
+                            <div class="bg-slate-50 border-2 border-slate-300 rounded-lg p-6 flex flex-col text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+                                <img src="https://github.com/PANZERBERO/PabloAhumadaCV/raw/main/Imagen%20Gesti%C3%B3n%20de%20Reclamos.png" alt="Ilustración de un taller de reparación para gestión de reclamos" class="rounded-md mb-6 w-10/12 h-auto mx-auto">
+                                <h4 class="font-display text-2xl font-bold text-slate-800 uppercase">Gestión de Reclamos</h4>
+                                <p class="font-body text-base font-semibold text-cyan-600 mb-3">Coordinación SAC</p>
+                                <p class="font-body text-slate-600 text-base flex-grow">Sistema coordinado con servicio al cliente para alinear respuestas y dar una solución efectiva y rápida.</p>
+                                <button data-target="page-reclamos" class="nav-button mt-6 bg-slate-800 text-white font-display uppercase tracking-wider py-2 px-4 rounded-md hover:bg-cyan-600 transition-colors duration-300">Inspeccionar Sistema</button>
+                            </div>
+                            <div class="bg-slate-50 border-2 border-slate-300 rounded-lg p-6 flex flex-col text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+                                <img src="https://github.com/PANZERBERO/PabloAhumadaCV/raw/main/Imagen%20Reporteria.png" alt="Ilustración de Pablo con una tablet en la sala de telemetría" class="rounded-md mb-6 w-10/12 h-auto mx-auto">
+                                <h4 class="font-display text-2xl font-bold text-slate-800 uppercase">Sala de Telemetría</h4>
+                                <p class="font-body text-base font-semibold text-cyan-600 mb-3">Reportería y Análisis</p>
+                                <p class="font-body text-slate-600 text-base flex-grow">Reportes de rendimiento y análisis comparativo, tanto de mis marcas como de la competencia directa.</p>
+                                <button data-target="page-telemetria" class="nav-button mt-6 bg-slate-800 text-white font-display uppercase tracking-wider py-2 px-4 rounded-md hover:bg-cyan-600 transition-colors duration-300">Inspeccionar Sistema</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mi Historia Profesional -->
+                    <div class="mt-12 pt-8 border-t-2 border-slate-300">
+                        <div class="text-center">
+                            <h3 class="font-display text-3xl font-bold text-slate-800 uppercase tracking-wider">Mi Historia Profesional</h3>
+                        </div>
+                        <div class="mt-10 max-w-2xl mx-auto">
+                            <div class="relative">
+                                <div class="timeline-line"></div>
+                                <div class="timeline-item">
+                                    <div class="timeline-point"></div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="bg-slate-100 p-3 rounded-md border border-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-display text-xl font-bold text-slate-700">Inicios en Agencias</h4>
+                                            <p class="mt-1 text-slate-600">Comencé en la agencia Raya y posteriormente estuve en McCann Santiago para General Motors a nivel regional.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-point"></div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="bg-slate-100 p-3 rounded-md border border-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-display text-xl font-bold text-slate-700">Crecimiento y Consolidación</h4>
+                                            <p class="mt-1 text-slate-600">Mi paso por la startup Time Jobs y mi posterior consolidación en Americar me permitieron fortalecer habilidades en gestión de comunidades, reportería y análisis de datos aplicados a decisiones comerciales.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-point"></div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="bg-slate-100 p-3 rounded-md border border-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-display text-xl font-bold text-slate-700">Especialización en Performance</h4>
+                                            <p class="mt-1 text-slate-600">Hoy, en Punta Pacifica Realty, optimizo su canal de YouTube aplicando SEO, análisis de métricas y diseño de dashboards, logrando impacto medible y posicionamiento internacional.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-point"></div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="bg-slate-100 p-3 rounded-md border border-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-display text-xl font-bold text-slate-700">Mi Forma de Trabajar</h4>
+                                            <p class="mt-1 text-slate-600">He estructurado una metodología comparable al funcionamiento de una fábrica: cada proceso está conectado, con enfoque en eficiencia, claridad y resultados sostenibles.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="italic text-center mt-12">
+                            “Cada experiencia ha sido una pieza clave en este engranaje que hoy impulsa mi forma de trabajar.”
                         </p>
                     </div>
+                </div>
+            </div>
+        </main>
+    </div>
 
-                    <div class="mt-10 pt-6 border-t border-slate-300">
-                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">¿Por qué lo pienso como una fábrica?</h3>
-                        <div class="space-y-4 text-slate-800 leading-relaxed font-body">
-                            <p>
-                               Cuento con 15 años de experiencia en Social Media, con un mayor enfoque en el sector automotriz.
-                            </p>
-                            <p>
-                                Mi enfoque va más allá de publicar contenido o responder mensajes: diseño sistemas integrados que convierten cada punto de contacto con el cliente en una pieza útil para análisis y acción. Cada interacción se convierte en insumo para tomar mejores decisiones, optimizar recursos y fortalecer el vínculo entre marca y audiencia.
-                            </p>
-                            <p>
-                                Pienso mi trabajo como una fábrica por la forma en que cada parte cumple una función precisa dentro de una estructura interconectada: desde el análisis del sentimiento en redes sociales hasta el cruce con datos comerciales y la retroalimentación hacia los equipos internos. No hay movimientos aislados; todo responde a una lógica de ensamblaje y mejora continua.
-                            </p>
-                            <p>
-                                He trabajado con marcas como General Motors y Americar, estructurando flujos que alinean comunicación y ventas, generando reportes útiles, accionables y relevantes. El objetivo es garantizar que lo que sucede en la superficie (una publicación, una consulta, un reclamo) tenga impacto positivo en la profundidad del negocio.
-                            </p>
-                             <p>
-                                Me dedico con constancia y compromiso a mantener esta maquinaria en funcionamiento todos los días del año, incluidos fines de semana y feriados, para asegurar que la experiencia de marca nunca se detenga, incluso cuando el público no lo percibe de forma explícita.
-                             </p>
+    <!-- PÁGINA INTERNA: CENTRO DE MENSAJES SAC -->
+    <section id="page-sac" class="page-section hidden">
+        <div class="w-full max-w-5xl mx-auto p-4">
+            <div class="bg-white rounded-lg shadow-2xl overflow-hidden my-10 border-4 border-slate-300">
+                <div class="p-8 md:p-12">
+                    <!-- Header de la Página Interna -->
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 class="font-display text-3xl font-bold text-slate-800 uppercase">Sistema de Control</h2>
+                            <p class="font-display text-xl text-cyan-600 uppercase tracking-wider">Centro de Mensajes SAC</p>
                         </div>
+                        <button data-target="main-page" class="nav-button bg-slate-200 text-slate-800 font-display uppercase tracking-wider py-2 px-5 rounded-md hover:bg-slate-300 transition-colors duration-300 self-center">Volver</button>
                     </div>
                     
-                    <p class="italic text-center mt-8">
-                       Esto es lo que llamo mi fábrica: un sistema en evolución constante, afinado para que cada engranaje contribuya al avance de la marca.
-                    </p>
+                    <!-- Breve Explicación -->
+                    <div class="mb-10 border-b border-slate-200 pb-6">
+                        <p class="text-slate-600 leading-relaxed">Para asegurar una comunicación coherente y efectiva, cada interacción con el cliente pasa por un proceso de tres etapas: se analiza el caso y se genera una respuesta (Módulo 1), se etiqueta según un sistema estandarizado (Módulo 2) y se mide el volumen para entender tendencias (Módulo 3).</p>
+                    </div>
+
+                    <!-- Módulo 1: Mensajes y Respuestas -->
+                    <div class="mb-12">
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">1. Mensajes y Respuestas Tipo</h3>
+                        <div class="overflow-x-auto border border-slate-200 rounded-md">
+                            <table class="w-full text-sm text-left text-slate-500">
+                                <thead class="text-xs text-slate-700 uppercase bg-slate-100 font-display">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 w-1/2">Mensaje del Usuario (Ejemplo)</th>
+                                        <th scope="col" class="px-6 py-3 w-1/2">Respuesta Tipo</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="font-body">
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 text-slate-600">"Hola, me interesa el nuevo Onix, ¿me dan el precio por favor?"</td><td class="px-6 py-4 text-slate-600">"¡Hola! Gracias por tu interés. Para darte información precisa sobre precios y versiones, ¿podrías indicarnos un número de contacto o correo para que un ejecutivo comercial te asesore sin compromiso? ¡Saludos!"</td></tr>
+                                    <tr class="bg-slate-50 border-b"><td class="px-6 py-4 text-slate-600">"¡Qué increíble el color de la nueva Silverado! ¡La quiero!"</td><td class="px-6 py-4 text-slate-600">"¡Nos encanta que te guste! Ese color realmente destaca la potencia de la Silverado. Gracias por tu comentario, ¡nos motiva a seguir innovando! 🔥"</td></tr>
+                                    <tr class="bg-white"><td class="px-6 py-4 text-slate-600">"Llevo una semana esperando que me llamen del servicio técnico. Pésimo servicio."</td><td class="px-6 py-4 text-slate-600">"Lamentamos mucho tu mala experiencia. Por favor, envíanos por mensaje privado tu nombre, RUT y la sucursal que visitaste para escalar tu caso de inmediato y darte una solución. Tu satisfacción es nuestra prioridad."</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 2: Clasificación -->
+                     <div class="mb-12">
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">2. Sistema de Clasificación</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-display text-lg font-bold text-slate-600 mb-3">Clasificación por Intención</h4>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center">
+                                    <div class="bg-slate-100 p-4 rounded-md"><span class="bg-amber-100 text-amber-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">Venta</span><p class="text-xs text-slate-500 mt-1">Interés de compra directo.</p></div>
+                                    <div class="bg-slate-100 p-4 rounded-md"><span class="bg-cyan-100 text-cyan-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">Branding</span><p class="text-xs text-slate-500 mt-1">Comentario positivo sobre la marca.</p></div>
+                                    <div class="bg-slate-100 p-4 rounded-md"><span class="bg-rose-100 text-rose-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">Reclamo</span><p class="text-xs text-slate-500 mt-1">Experiencia negativa del cliente.</p></div>
+                                    <div class="bg-slate-100 p-4 rounded-md"><span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">Técnica</span><p class="text-xs text-slate-500 mt-1">Consulta sobre especificaciones.</p></div>
+                                    <div class="bg-slate-100 p-4 rounded-md"><span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">Producto</span><p class="text-xs text-slate-500 mt-1">Menciona un modelo específico.</p></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-display text-lg font-bold text-slate-600 mb-3">Clasificación por Sentimiento</h4>
+                                <div class="grid grid-cols-3 gap-4 text-center">
+                                    <div class="bg-slate-100 p-4 rounded-md"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Positivo</span><p class="text-xs text-slate-500 mt-1">El tono del mensaje es favorable.</p></div>
+                                    <div class="bg-slate-100 p-4 rounded-md"><span class="bg-slate-200 text-slate-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Neutro</span><p class="text-xs text-slate-500 mt-1">El tono es informativo o neutral.</p></div>
+                                    <div class="bg-slate-100 p-4 rounded-md"><span class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Negativo</span><p class="text-xs text-slate-500 mt-1">El tono del mensaje es desfavorable.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 3: Gráficos -->
+                    <div>
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">3. Volumen de Interacciones (Data Ficticia)</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                            <div class="md:col-span-1 bg-slate-100 p-6 rounded-md text-center">
+                                <h4 class="font-display text-lg font-bold text-slate-600 uppercase">Total Mensajes (YTD)</h4>
+                                <div id="gauge-chart"></div>
+                            </div>
+                            <div class="md:col-span-2 bg-slate-100 p-6 rounded-md">
+                                 <h4 class="font-display text-lg font-bold text-slate-600 uppercase text-center mb-2">Mensajes por Mes (2025)</h4>
+                                <div id="bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
-                <!-- Mis Áreas de Producción -->
-                <div class="mt-12 pt-8 border-t-2 border-slate-300">
-                    <div class="text-center">
-                        <h3 class="font-display text-3xl font-bold text-slate-800 uppercase tracking-wider">Mis Áreas de Producción</h3>
-                        <p class="text-lg text-slate-600 -mt-1 mb-10">Del taller a la pista: estos son los sistemas que pongo en marcha.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="bg-slate-50 border-2 border-slate-300 rounded-lg p-6 flex flex-col text-center shadow-md hover:shadow-xl transition-shadow duration-300">
-                            <img src="https://github.com/PANZERBERO/PabloAhumadaCV/raw/main/Imagen%20SAC.png" alt="Ilustración de Pablo con auriculares en el centro de mensajes" class="rounded-md mb-6 w-10/12 h-auto mx-auto">
-                            <h4 class="font-display text-2xl font-bold text-slate-800 uppercase">Centro de Mensajes</h4>
-                            <p class="font-body text-base font-semibold text-cyan-600 mb-3">Atención SAC</p>
-                            <p class="font-body text-slate-600 text-base flex-grow">Clasifico, etiqueto y respondo cada mensaje con el tono adecuado según la campaña y el tipo de consulta.</p>
-                            <a href="#sac" class="mt-6 bg-slate-800 text-white font-display uppercase tracking-wider py-2 px-4 rounded-md hover:bg-cyan-600 transition-colors duration-300">Inspeccionar Sistema</a>
-                        </div>
-                        <div class="bg-slate-50 border-2 border-slate-300 rounded-lg p-6 flex flex-col text-center shadow-md hover:shadow-xl transition-shadow duration-300">
-                            <img src="https://github.com/PANZERBERO/PabloAhumadaCV/raw/main/Imagen%20Gesti%C3%B3n%20de%20Leads.png" alt="Ilustración de Pablo con cronómetro para trazabilidad de leads" class="rounded-md mb-6 w-10/12 h-auto mx-auto">
-                            <h4 class="font-display text-2xl font-bold text-slate-800 uppercase">Trazabilidad de Leads</h4>
-                            <p class="font-body text-base font-semibold text-cyan-600 mb-3">Dashboard Comercial</p>
-                            <p class="font-body text-slate-600 text-base flex-grow">Permite el seguimiento y conversión de clientes desde redes sociales hasta la venta final.</p>
-                            <a href="#leads" class="mt-6 bg-slate-800 text-white font-display uppercase tracking-wider py-2 px-4 rounded-md hover:bg-cyan-600 transition-colors duration-300">Inspeccionar Sistema</a>
-                        </div>
-                        <div class="bg-slate-50 border-2 border-slate-300 rounded-lg p-6 flex flex-col text-center shadow-md hover:shadow-xl transition-shadow duration-300">
-                            <img src="https://github.com/PANZERBERO/PabloAhumadaCV/raw/main/Imagen%20Gesti%C3%B3n%20de%20Reclamos.png" alt="Ilustración de un taller de reparación para gestión de reclamos" class="rounded-md mb-6 w-10/12 h-auto mx-auto">
-                            <h4 class="font-display text-2xl font-bold text-slate-800 uppercase">Gestión de Reclamos</h4>
-                            <p class="font-body text-base font-semibold text-cyan-600 mb-3">Coordinación SAC</p>
-                            <p class="font-body text-slate-600 text-base flex-grow">Sistema coordinado con servicio al cliente para alinear respuestas y dar una solución efectiva y rápida.</p>
-                            <a href="#reclamos" class="mt-6 bg-slate-800 text-white font-display uppercase tracking-wider py-2 px-4 rounded-md hover:bg-cyan-600 transition-colors duration-300">Inspeccionar Sistema</a>
-                        </div>
-                        <div class="bg-slate-50 border-2 border-slate-300 rounded-lg p-6 flex flex-col text-center shadow-md hover:shadow-xl transition-shadow duration-300">
-                            <img src="https://github.com/PANZERBERO/PabloAhumadaCV/raw/main/Imagen%20Reporteria.png" alt="Ilustración de Pablo con una tablet en la sala de telemetría" class="rounded-md mb-6 w-10/12 h-auto mx-auto">
-                            <h4 class="font-display text-2xl font-bold text-slate-800 uppercase">Sala de Telemetría</h4>
-                            <p class="font-body text-base font-semibold text-cyan-600 mb-3">Reportería y Análisis</p>
-                            <p class="font-body text-slate-600 text-base flex-grow">Reportes de rendimiento y análisis comparativo, tanto de mis marcas como de la competencia directa.</p>
-                            <a href="#telemetria" class="mt-6 bg-slate-800 text-white font-display uppercase tracking-wider py-2 px-4 rounded-md hover:bg-cyan-600 transition-colors duration-300">Inspeccionar Sistema</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mi Historia Profesional -->
-                <div class="mt-12 pt-8 border-t-2 border-slate-300">
-                    <div class="text-center">
-                        <h3 class="font-display text-3xl font-bold text-slate-800 uppercase tracking-wider">Mi Historia Profesional</h3>
-                    </div>
-                    <div class="mt-10 max-w-2xl mx-auto">
-                        <div class="relative">
-                            <div class="timeline-line"></div>
-                            <!-- Bloque 1: Inicios en agencias -->
-                            <div class="timeline-item">
-                                <div class="timeline-point"></div>
-                                <div class="flex items-start gap-4">
-                                    <div class="bg-slate-100 p-3 rounded-md border border-slate-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-display text-xl font-bold text-slate-700">Inicios en Agencias</h4>
-                                        <p class="mt-1 text-slate-600">Comencé en McCann Santiago, donde gestioné cuentas regionales como Chevrolet. Este periodo me permitió adquirir experiencia en comunicación estratégica y exigencia profesional.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Bloque 2: Etapa en startups -->
-                            <div class="timeline-item">
-                                <div class="timeline-point"></div>
-                                <div class="flex items-start gap-4">
-                                    <div class="bg-slate-100 p-3 rounded-md border border-slate-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-display text-xl font-bold text-slate-700">Etapa en Startups</h4>
-                                        <p class="mt-1 text-slate-600">En Time Jobs y Americar fortalecí habilidades en gestión de comunidades, reportería, creación de contenido y análisis de datos aplicados a decisiones comerciales.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Bloque 3: Especialización en performance -->
-                            <div class="timeline-item">
-                                <div class="timeline-point"></div>
-                                <div class="flex items-start gap-4">
-                                    <div class="bg-slate-100 p-3 rounded-md border border-slate-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-display text-xl font-bold text-slate-700">Especialización en Performance</h4>
-                                        <p class="mt-1 text-slate-600">Hoy, en Punta Pacifica Realty, optimizo su canal de YouTube aplicando SEO, análisis de métricas y diseño de dashboards, logrando impacto medible y posicionamiento internacional.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Bloque 4: Mi forma de trabajar -->
-                            <div class="timeline-item">
-                                <div class="timeline-point"></div>
-                                <div class="flex items-start gap-4">
-                                    <div class="bg-slate-100 p-3 rounded-md border border-slate-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-display text-xl font-bold text-slate-700">Mi Forma de Trabajar</h4>
-                                        <p class="mt-1 text-slate-600">He estructurado una metodología comparable al funcionamiento de una fábrica: cada proceso está conectado, con enfoque en eficiencia, claridad y resultados sostenibles.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="italic text-center mt-12">
-                        “Cada experiencia ha sido una pieza clave en este engranaje que hoy impulsa mi forma de trabajar.”
-                    </p>
-                </div>
-
             </div>
         </div>
+    </section>
 
-        <!-- Botón de WhatsApp fijo -->
-        <a href="https://wa.me/+56978542576?text=¡Hola! Estoy interesado en tu CV." target="_blank" class="fixed bottom-4 right-4 bg-[#25D366] text-white font-display uppercase tracking-wider py-2 px-4 rounded-md hover:bg-[#128C7E] transition-colors duration-300 flex items-center shadow-lg z-50 whatsapp-button">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="w-6 h-6 mr-2">
-            ¡Escríbeme!
-        </a>
-    </main>
+    <!-- Aquí irían las otras páginas internas (leads, reclamos, telemetría) -->
+    <section id="page-leads" class="page-section hidden">
+         <!-- Contenido de la página de Trazabilidad de Leads -->
+    </section>
+    <section id="page-reclamos" class="page-section hidden">
+         <!-- Contenido de la página de Gestión de Reclamos -->
+    </section>
+    <section id="page-telemetria" class="page-section hidden">
+         <!-- Contenido de la página de Sala de Telemetría -->
+    </section>
 
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/56978542576" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded-lg flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors duration-300 z-50 gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.58-1.452l-6.195 1.669zm4.893-6.212c.338.529.718.983 1.14 1.379.842.783 1.843 1.335 2.928 1.693.004.001.008.001.012.001.001 0 .002 0 .003 0 1.1.32 2.252.488 3.42.488 5.421 0 9.82-4.399 9.821-9.821C22.022 6.553 17.62 2.153 12.2 2.153c-5.421 0-9.82 4.399-9.821 9.821 0 2.06.631 4.01 1.792 5.665l.004.007.002.003c.002 0 .003.001.005.001l.001.001c.32 1.054.85 2.029 1.572 2.899z"/>
+        </svg>
+        <span class="font-display uppercase tracking-wider">¡Escríbeme!</span>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-button');
+            const pages = document.querySelectorAll('.page-section');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    
+                    pages.forEach(page => {
+                        if (page.id === targetId) {
+                            page.classList.remove('hidden');
+                        } else {
+                            page.classList.add('hidden');
+                        }
+                    });
+                    window.scrollTo(0, 0);
+                });
+            });
+
+            // --- GRÁFICOS D3 ---
+            // Gráfico de Medidor (Gauge)
+            function drawGaugeChart() {
+                const data = { value: 4825 };
+                const width = 200, height = 120, margin = 20;
+                const radius = Math.min(width, height * 2) / 2 - margin;
+
+                d3.select("#gauge-chart").select("svg").remove();
+                const svg = d3.select("#gauge-chart").append("svg")
+                    .attr("width", width)
+                    .attr("height", height)
+                    .append("g")
+                    .attr("transform", `translate(${width / 2}, ${height - margin / 2})`);
+
+                const arc = d3.arc().innerRadius(radius - 20).outerRadius(radius).startAngle(-Math.PI / 2).endAngle(d => d);
+                
+                svg.append("path").datum(Math.PI / 2).attr("d", arc).attr("fill", "#e5e7eb");
+                svg.append("path").datum((data.value / 10000) * Math.PI - Math.PI / 2).attr("d", arc).attr("fill", "#0891b2");
+
+                svg.append("text").attr("text-anchor", "middle").attr("dy", "-0.5em").style("font-size", "24px").style("font-weight", "bold").attr("class", "font-display text-slate-800").text(data.value);
+                svg.append("text").attr("text-anchor", "middle").attr("dy", "1.2em").style("font-size", "12px").attr("class", "font-body text-slate-500").text("Mensajes");
+            }
+
+            // Gráfico de Barras
+            function drawBarChart() {
+                const data = [
+                    { month: "Ene", value: 520 }, { month: "Feb", value: 610 }, { month: "Mar", value: 750 },
+                    { month: "Abr", value: 890 }, { month: "May", value: 810 }, { month: "Jun", value: 940 }, { month: "Jul", value: 1020 }
+                ];
+                const width = 450, height = 180, margin = { top: 20, right: 0, bottom: 30, left: 40 };
+
+                d3.select("#bar-chart").select("svg").remove();
+                const svg = d3.select("#bar-chart").append("svg")
+                    .attr("width", width).attr("height", height)
+                    .append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+                const x = d3.scaleBand().range([0, width - margin.left - margin.right]).domain(data.map(d => d.month)).padding(0.3);
+                const y = d3.scaleLinear().range([height - margin.top - margin.bottom, 0]).domain([0, d3.max(data, d => d.value)]);
+
+                svg.append("g").attr("transform", `translate(0,${height - margin.top - margin.bottom})`).call(d3.axisBottom(x)).attr("class", "font-body text-slate-500");
+                svg.append("g").call(d3.axisLeft(y).ticks(5)).attr("class", "font-body text-slate-500");
+
+                svg.selectAll(".bar").data(data).enter().append("rect")
+                    .attr("class", "bar")
+                    .attr("x", d => x(d.month))
+                    .attr("width", x.bandwidth())
+                    .attr("y", d => y(d.value))
+                    .attr("height", d => height - margin.top - margin.bottom - y(d.value))
+                    .attr("fill", "#0e7490");
+            }
+            
+            // Observador para dibujar gráficos solo cuando la página es visible
+            const sacPageObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.attributeName === 'class' && !mutation.target.classList.contains('hidden')) {
+                        drawGaugeChart();
+                        drawBarChart();
+                    }
+                });
+            });
+            sacPageObserver.observe(document.getElementById('page-sac'), { attributes: true });
+
+        });
+    </script>
 </body>
 </html>
