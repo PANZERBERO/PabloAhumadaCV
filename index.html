@@ -278,15 +278,203 @@
         </div>
     </section>
 
-    <!-- Aquí irían las otras páginas internas (leads, reclamos, telemetría) -->
+    <!-- PÁGINA INTERNA: DASHBOARD COMERCIAL -->
     <section id="page-leads" class="page-section hidden">
-         <!-- Contenido de la página de Trazabilidad de Leads -->
+         <div class="w-full max-w-5xl mx-auto p-4">
+            <div class="bg-white rounded-lg shadow-2xl overflow-hidden my-10 border-4 border-slate-300">
+                <div class="p-8 md:p-12">
+                    <!-- Header de la Página Interna -->
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 class="font-display text-3xl font-bold text-slate-800 uppercase">Sistema de Trazabilidad</h2>
+                            <p class="font-display text-xl text-cyan-600 uppercase tracking-wider">Dashboard Comercial</p>
+                        </div>
+                        <button data-target="main-page" class="nav-button bg-slate-200 text-slate-800 font-display uppercase tracking-wider py-2 px-5 rounded-md hover:bg-slate-300 transition-colors duration-300 self-center">Volver</button>
+                    </div>
+                    
+                    <!-- Breve Explicación -->
+                    <div class="mb-10 border-b border-slate-200 pb-6">
+                        <p class="text-slate-600 leading-relaxed">Este dashboard centraliza los leads generados en canales digitales, proporcionando al equipo comercial una base de datos unificada para el seguimiento. El objetivo es maximizar la tasa de contacto y conversión, asegurando que ninguna oportunidad se pierda.</p>
+                    </div>
+
+                    <!-- Tabla de Leads -->
+                    <div class="mb-12">
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">Base de Datos de Leads</h3>
+                        <div class="overflow-x-auto border border-slate-200 rounded-md">
+                            <table class="w-full text-sm text-left text-slate-500">
+                                <thead class="text-xs text-slate-700 uppercase bg-slate-100 font-display">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3">Nombre</th>
+                                        <th scope="col" class="px-4 py-3">Contacto</th>
+                                        <th scope="col" class="px-4 py-3">Ciudad</th>
+                                        <th scope="col" class="px-4 py-3">Modelo Interés</th>
+                                        <th scope="col" class="px-4 py-3">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="font-body">
+                                    <tr class="bg-white border-b"><td class="px-4 py-3">Ana Rojas</td><td class="px-4 py-3 text-xs">ana.r@email.com<br>+56987654321</td><td class="px-4 py-3">Santiago</td><td class="px-4 py-3">Chevrolet Groove</td><td class="px-4 py-3"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Asignado</span></td></tr>
+                                    <tr class="bg-slate-50 border-b"><td class="px-4 py-3">Carlos Soto</td><td class="px-4 py-3 text-xs">c.soto@email.com<br>+56912345678</td><td class="px-4 py-3">Viña del Mar</td><td class="px-4 py-3">Chevrolet Onix</td><td class="px-4 py-3"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Asignado</span></td></tr>
+                                    <tr class="bg-white border-b"><td class="px-4 py-3">Javiera Núñez</td><td class="px-4 py-3 text-xs">javi.n@email.com<br>+56955554444</td><td class="px-4 py-3">Rancagua</td><td class="px-4 py-3">Chevrolet Tracker</td><td class="px-4 py-3"><span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Pendiente</span></td></tr>
+                                    <tr class="bg-slate-50 border-b"><td class="px-4 py-3">Matias Castro</td><td class="px-4 py-3 text-xs">m.castro@email.com<br>+56911112222</td><td class="px-4 py-3">La Serena</td><td class="px-4 py-3">Chevrolet Silverado</td><td class="px-4 py-3"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Asignado</span></td></tr>
+                                     <tr class="bg-white"><td class="px-4 py-3">Isidora Vera</td><td class="px-4 py-3 text-xs">isi.vera@email.com<br>+56933334444</td><td class="px-4 py-3">Concepción</td><td class="px-4 py-3">Chevrolet Onix</td><td class="px-4 py-3"><span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Pendiente</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- KPIs y Gráficos -->
+                    <div>
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">Indicadores de Rendimiento (Data Ficticia)</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="bg-slate-100 p-4 rounded-lg text-center"><p class="font-display text-3xl font-bold text-cyan-600">82%</p><p class="text-sm text-slate-500">Leads Contactados</p></div>
+                            <div class="bg-slate-100 p-4 rounded-lg text-center"><p class="font-display text-3xl font-bold text-cyan-600">18%</p><p class="text-sm text-slate-500">Tasa de Cierre (YTD)</p></div>
+                            <div class="bg-slate-100 p-4 rounded-lg text-center"><p class="font-display text-3xl font-bold text-cyan-600">Onix</p><p class="text-sm text-slate-500">Modelo más Cotizado</p></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-slate-100 p-6 rounded-lg">
+                                <h4 class="font-display text-lg font-bold text-slate-600 uppercase text-center mb-4">Tasa de Cierre</h4>
+                                <div id="donut-chart"></div>
+                            </div>
+                            <div class="bg-slate-100 p-6 rounded-lg">
+                                <h4 class="font-display text-lg font-bold text-slate-600 uppercase text-center mb-4">Modelos más Cotizados</h4>
+                                <div id="h-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- PÁGINA INTERNA: GESTIÓN DE RECLAMOS -->
     <section id="page-reclamos" class="page-section hidden">
-         <!-- Contenido de la página de Gestión de Reclamos -->
+        <div class="w-full max-w-5xl mx-auto p-4">
+            <div class="bg-white rounded-lg shadow-2xl overflow-hidden my-10 border-4 border-slate-300">
+                <div class="p-8 md:p-12">
+                    <!-- Header de la Página Interna -->
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 class="font-display text-3xl font-bold text-slate-800 uppercase">Sistema de Coordinación</h2>
+                            <p class="font-display text-xl text-cyan-600 uppercase tracking-wider">Gestión de Reclamos</p>
+                        </div>
+                        <button data-target="main-page" class="nav-button bg-slate-200 text-slate-800 font-display uppercase tracking-wider py-2 px-5 rounded-md hover:bg-slate-300 transition-colors duration-300 self-center">Volver</button>
+                    </div>
+                    
+                    <!-- Breve Explicación -->
+                    <div class="mb-10 border-b border-slate-200 pb-6">
+                        <p class="text-slate-600 leading-relaxed">Este panel monitorea la resolución de reclamos, asegurando una comunicación fluida entre el cliente, redes sociales y el equipo de postventa. El objetivo es transformar una experiencia negativa en una oportunidad de fidelización a través de una gestión eficiente y transparente.</p>
+                    </div>
+
+                    <!-- Tabla de Reclamos -->
+                    <div class="mb-12">
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">Casos Activos</h3>
+                        <div class="overflow-x-auto border border-slate-200 rounded-md">
+                            <table class="w-full text-sm text-left text-slate-500">
+                                <thead class="text-xs text-slate-700 uppercase bg-slate-100 font-display">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3">Cliente</th>
+                                        <th scope="col" class="px-4 py-3">Sucursal</th>
+                                        <th scope="col" class="px-4 py-3">Detalle del Reclamo</th>
+                                        <th scope="col" class="px-4 py-3">Encargado</th>
+                                        <th scope="col" class="px-4 py-3">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="font-body">
+                                    <tr class="bg-white border-b"><td class="px-4 py-3">Fernanda Díaz</td><td class="px-4 py-3">Antofagasta</td><td class="px-4 py-3">Demora en entrega de vehículo nuevo.</td><td class="px-4 py-3">J. Pérez</td><td class="px-4 py-3"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Resuelto</span></td></tr>
+                                    <tr class="bg-slate-50 border-b"><td class="px-4 py-3">Ricardo Morales</td><td class="px-4 py-3">Santiago Centro</td><td class="px-4 py-3">Falla en sistema de audio tras servicio.</td><td class="px-4 py-3">A. González</td><td class="px-4 py-3"><span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded-full">En Proceso</span></td></tr>
+                                    <tr class="bg-white border-b"><td class="px-4 py-3">Valentina Soto</td><td class="px-4 py-3">Temuco</td><td class="px-4 py-3">Mala atención de vendedor.</td><td class="px-4 py-3">C. Muñoz</td><td class="px-4 py-3"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Resuelto</span></td></tr>
+                                    <tr class="bg-slate-50"><td class="px-4 py-3">Benjamín López</td><td class="px-4 py-3">Las Condes</td><td class="px-4 py-3">Cobro indebido en mantención.</td><td class="px-4 py-3">A. González</td><td class="px-4 py-3"><span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Pendiente</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- KPIs y Gráficos -->
+                    <div>
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">Análisis de Reclamos (Data Ficticia)</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-slate-100 p-6 rounded-lg">
+                                <h4 class="font-display text-lg font-bold text-slate-600 uppercase text-center mb-4">Tipos de Reclamo</h4>
+                                <div id="pie-chart-reclamos"></div>
+                            </div>
+                            <div class="bg-slate-100 p-6 rounded-lg">
+                                <h4 class="font-display text-lg font-bold text-slate-600 uppercase text-center mb-4">Tiempo Medio de Resolución</h4>
+                                <div id="h-bar-chart-resolucion"></div>
+                            </div>
+                            <div class="bg-slate-100 p-6 rounded-lg">
+                                <h4 class="font-display text-lg font-bold text-slate-600 uppercase text-center mb-4">Sucursales con más Casos</h4>
+                                <div id="v-bar-chart-sucursales"></div>
+                            </div>
+                             <div class="bg-slate-100 p-6 rounded-lg">
+                                <h4 class="font-display text-lg font-bold text-slate-600 uppercase text-center mb-4">Modelos con más Casos</h4>
+                                <div id="v-bar-chart-modelos"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- PÁGINA INTERNA: SALA DE TELEMETRÍA -->
     <section id="page-telemetria" class="page-section hidden">
-         <!-- Contenido de la página de Sala de Telemetría -->
+        <div class="w-full max-w-5xl mx-auto p-4">
+            <div class="bg-white rounded-lg shadow-2xl overflow-hidden my-10 border-4 border-slate-300">
+                <div class="p-8 md:p-12">
+                     <!-- Header de la Página Interna -->
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 class="font-display text-3xl font-bold text-slate-800 uppercase">Sala de Control</h2>
+                            <p class="font-display text-xl text-cyan-600 uppercase tracking-wider">Reportería y Análisis</p>
+                        </div>
+                        <button data-target="main-page" class="nav-button bg-slate-200 text-slate-800 font-display uppercase tracking-wider py-2 px-5 rounded-md hover:bg-slate-300 transition-colors duration-300 self-center">Volver</button>
+                    </div>
+                    
+                    <!-- Breve Explicación -->
+                    <div class="mb-10 border-b border-slate-200 pb-6">
+                        <p class="text-slate-600 leading-relaxed">Esta es la sala de telemetría, donde los datos se convierten en inteligencia. Aquí se monitorea el rendimiento de los canales propios, se analiza el posicionamiento frente a la competencia y se consolida un resumen ejecutivo de todas las operaciones de la fábrica.</p>
+                    </div>
+
+                    <!-- Gráficos de Performance -->
+                    <div class="mb-12">
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">1. Performance de Canales Propios</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-slate-100 p-6 rounded-lg">
+                                <h4 class="font-display text-lg font-bold text-slate-600 uppercase text-center mb-4">Crecimiento de Comunidad</h4>
+                                <div id="area-chart-crecimiento"></div>
+                            </div>
+                            <div class="bg-slate-100 p-6 rounded-lg">
+                                <h4 class="font-display text-lg font-bold text-slate-600 uppercase text-center mb-4">Tasa de Engagement</h4>
+                                <div id="area-chart-engagement"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico Competitivo -->
+                    <div class="mb-12">
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">2. Análisis Competitivo</h3>
+                        <div class="bg-slate-100 p-6 rounded-lg">
+                            <div id="grouped-bar-chart-competencia"></div>
+                        </div>
+                    </div>
+
+                    <!-- Resumen de Operaciones -->
+                    <div>
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-4">3. Resumen de Operaciones (YTD)</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="bg-slate-100 p-4 rounded-lg text-center"><p class="font-display text-2xl font-bold text-cyan-600">4,825</p><p class="text-sm text-slate-500">Mensajes Recibidos</p></div>
+                            <div class="bg-slate-100 p-4 rounded-lg text-center"><p class="font-display text-2xl font-bold text-cyan-600">312</p><p class="text-sm text-slate-500">Leads Generados</p></div>
+                            <div class="bg-slate-100 p-4 rounded-lg text-center"><p class="font-display text-2xl font-bold text-cyan-600">Onix</p><p class="text-sm text-slate-500">Modelo más Cotizado</p></div>
+                            <div class="bg-slate-100 p-4 rounded-lg text-center"><p class="font-display text-2xl font-bold text-cyan-600">18%</p><p class="text-sm text-slate-500">Tasa de Conversión</p></div>
+                            <div class="bg-slate-100 p-4 rounded-lg text-center"><p class="font-display text-2xl font-bold text-cyan-600">33</p><p class="text-sm text-slate-500">Reclamos Gestionados</p></div>
+                            <div class="bg-slate-100 p-4 rounded-lg text-center"><p class="font-display text-2xl font-bold text-cyan-600">91%</p><p class="text-sm text-slate-500">Casos Resueltos</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Botón Flotante de WhatsApp -->
@@ -302,83 +490,219 @@
             const navButtons = document.querySelectorAll('.nav-button');
             const pages = document.querySelectorAll('.page-section');
 
+            function switchPage(targetId) {
+                pages.forEach(page => {
+                    if (page.id === targetId) {
+                        page.classList.remove('hidden');
+                    } else {
+                        page.classList.add('hidden');
+                    }
+                });
+                window.scrollTo(0, 0);
+            }
+
             navButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const targetId = this.getAttribute('data-target');
-                    
-                    pages.forEach(page => {
-                        if (page.id === targetId) {
-                            page.classList.remove('hidden');
-                        } else {
-                            page.classList.add('hidden');
-                        }
-                    });
-                    window.scrollTo(0, 0);
+                    switchPage(targetId);
                 });
             });
 
             // --- GRÁFICOS D3 ---
-            // Gráfico de Medidor (Gauge)
             function drawGaugeChart() {
-                const data = { value: 4825 };
-                const width = 200, height = 120, margin = 20;
-                const radius = Math.min(width, height * 2) / 2 - margin;
-
-                d3.select("#gauge-chart").select("svg").remove();
-                const svg = d3.select("#gauge-chart").append("svg")
-                    .attr("width", width)
-                    .attr("height", height)
-                    .append("g")
-                    .attr("transform", `translate(${width / 2}, ${height - margin / 2})`);
-
-                const arc = d3.arc().innerRadius(radius - 20).outerRadius(radius).startAngle(-Math.PI / 2).endAngle(d => d);
-                
-                svg.append("path").datum(Math.PI / 2).attr("d", arc).attr("fill", "#e5e7eb");
-                svg.append("path").datum((data.value / 10000) * Math.PI - Math.PI / 2).attr("d", arc).attr("fill", "#0891b2");
-
-                svg.append("text").attr("text-anchor", "middle").attr("dy", "-0.5em").style("font-size", "24px").style("font-weight", "bold").attr("class", "font-display text-slate-800").text(data.value);
-                svg.append("text").attr("text-anchor", "middle").attr("dy", "1.2em").style("font-size", "12px").attr("class", "font-body text-slate-500").text("Mensajes");
+                const container = d3.select("#gauge-chart");
+                if (container.select("svg").empty()) {
+                    const data = { value: 4825 };
+                    const width = 200, height = 120, margin = 20;
+                    const radius = Math.min(width, height * 2) / 2 - margin;
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${width / 2}, ${height - margin / 2})`);
+                    const arc = d3.arc().innerRadius(radius - 20).outerRadius(radius).startAngle(-Math.PI / 2).endAngle(d => d);
+                    svg.append("path").datum(Math.PI / 2).attr("d", arc).attr("fill", "#e5e7eb");
+                    svg.append("path").datum((data.value / 10000) * Math.PI - Math.PI / 2).attr("d", arc).attr("fill", "#0891b2");
+                    svg.append("text").attr("text-anchor", "middle").attr("dy", "-0.5em").style("font-size", "24px").style("font-weight", "bold").attr("class", "font-display text-slate-800").text(data.value);
+                    svg.append("text").attr("text-anchor", "middle").attr("dy", "1.2em").style("font-size", "12px").attr("class", "font-body text-slate-500").text("Mensajes");
+                }
             }
 
-            // Gráfico de Barras
             function drawBarChart() {
-                const data = [
-                    { month: "Ene", value: 520 }, { month: "Feb", value: 610 }, { month: "Mar", value: 750 },
-                    { month: "Abr", value: 890 }, { month: "May", value: 810 }, { month: "Jun", value: 940 }, { month: "Jul", value: 1020 }
-                ];
-                const width = 450, height = 180, margin = { top: 20, right: 0, bottom: 30, left: 40 };
+                const container = d3.select("#bar-chart");
+                if (container.select("svg").empty()) {
+                    const data = [{ month: "Ene", value: 520 }, { month: "Feb", value: 610 }, { month: "Mar", value: 750 }, { month: "Abr", value: 890 }, { month: "May", value: 810 }, { month: "Jun", value: 940 }, { month: "Jul", value: 1020 }];
+                    const width = 450, height = 180, margin = { top: 20, right: 0, bottom: 30, left: 40 };
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+                    const x = d3.scaleBand().range([0, width - margin.left - margin.right]).domain(data.map(d => d.month)).padding(0.3);
+                    const y = d3.scaleLinear().range([height - margin.top - margin.bottom, 0]).domain([0, d3.max(data, d => d.value)]);
+                    svg.append("g").attr("transform", `translate(0,${height - margin.top - margin.bottom})`).call(d3.axisBottom(x)).attr("class", "font-body text-slate-500");
+                    svg.append("g").call(d3.axisLeft(y).ticks(5)).attr("class", "font-body text-slate-500");
+                    svg.selectAll(".bar").data(data).enter().append("rect").attr("class", "bar").attr("x", d => x(d.month)).attr("width", x.bandwidth()).attr("y", d => y(d.value)).attr("height", d => height - margin.top - margin.bottom - y(d.value)).attr("fill", "#0e7490");
+                }
+            }
 
-                d3.select("#bar-chart").select("svg").remove();
-                const svg = d3.select("#bar-chart").append("svg")
-                    .attr("width", width).attr("height", height)
-                    .append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+            function drawDonutChart() {
+                const container = d3.select("#donut-chart");
+                if (container.select("svg").empty()) {
+                    const data = [{label: "Cerrados", value: 18}, {label: "Pendientes", value: 82}];
+                    const width = 200, height = 200, margin = 20;
+                    const radius = Math.min(width, height) / 2 - margin;
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${width / 2},${height / 2})`);
+                    const color = d3.scaleOrdinal().domain(data.map(d => d.label)).range(["#0e7490", "#e5e7eb"]);
+                    const pie = d3.pie().value(d => d.value).sort(null);
+                    const arc = d3.arc().innerRadius(radius * 0.6).outerRadius(radius);
+                    svg.selectAll('path').data(pie(data)).enter().append('path').attr('d', arc).attr('fill', d => color(d.data.label));
+                    svg.append("text").attr("text-anchor", "middle").attr("dy", "0.35em").style("font-size", "28px").style("font-weight", "bold").attr("class", "font-display text-slate-800").text("18%");
+                }
+            }
 
-                const x = d3.scaleBand().range([0, width - margin.left - margin.right]).domain(data.map(d => d.month)).padding(0.3);
-                const y = d3.scaleLinear().range([height - margin.top - margin.bottom, 0]).domain([0, d3.max(data, d => d.value)]);
-
-                svg.append("g").attr("transform", `translate(0,${height - margin.top - margin.bottom})`).call(d3.axisBottom(x)).attr("class", "font-body text-slate-500");
-                svg.append("g").call(d3.axisLeft(y).ticks(5)).attr("class", "font-body text-slate-500");
-
-                svg.selectAll(".bar").data(data).enter().append("rect")
-                    .attr("class", "bar")
-                    .attr("x", d => x(d.month))
-                    .attr("width", x.bandwidth())
-                    .attr("y", d => y(d.value))
-                    .attr("height", d => height - margin.top - margin.bottom - y(d.value))
-                    .attr("fill", "#0e7490");
+            function drawHBarChart() {
+                const container = d3.select("#h-bar-chart");
+                if (container.select("svg").empty()) {
+                    const data = [{model: "Groove", value: 28}, {model: "Tracker", value: 45}, {model: "Onix", value: 82}, {model: "Silverado", value: 35}];
+                    data.sort((a, b) => b.value - a.value);
+                    const width = 250, height = 160, margin = { top: 10, right: 10, bottom: 20, left: 80 };
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+                    const y = d3.scaleBand().range([0, height - margin.top - margin.bottom]).domain(data.map(d => d.model)).padding(0.2);
+                    const x = d3.scaleLinear().range([0, width - margin.left - margin.right]).domain([0, d3.max(data, d => d.value)]);
+                    svg.append("g").call(d3.axisLeft(y)).attr("class", "font-body text-slate-500");
+                    svg.selectAll(".bar").data(data).enter().append("rect").attr("class", "bar").attr("y", d => y(d.model)).attr("height", y.bandwidth()).attr("x", 0).attr("width", d => x(d.value)).attr("fill", "#0e7490");
+                }
             }
             
-            // Observador para dibujar gráficos solo cuando la página es visible
-            const sacPageObserver = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.attributeName === 'class' && !mutation.target.classList.contains('hidden')) {
-                        drawGaugeChart();
-                        drawBarChart();
-                    }
-                });
-            });
-            sacPageObserver.observe(document.getElementById('page-sac'), { attributes: true });
+            function drawPieReclamos() {
+                const container = d3.select("#pie-chart-reclamos");
+                if (container.select("svg").empty()){
+                    const data = [{label: "Servicio", value: 45}, {label: "Producto", value: 30}, {label: "Atención", value: 25}];
+                    const width = 200, height = 200, margin = 20;
+                    const radius = Math.min(width, height) / 2 - margin;
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${width / 2},${height / 2})`);
+                    const color = d3.scaleOrdinal().domain(data.map(d => d.label)).range(["#0e7490", "#67e8f9", "#cbd5e1"]);
+                    const pie = d3.pie().value(d => d.value).sort(null);
+                    const arc = d3.arc().innerRadius(0).outerRadius(radius);
+                    svg.selectAll('path').data(pie(data)).enter().append('path').attr('d', arc).attr('fill', d => color(d.data.label));
+                }
+            }
 
+            function drawVBarSucursales() {
+                const container = d3.select("#v-bar-chart-sucursales");
+                if (container.select("svg").empty()){
+                    const data = [{name: "SCL Centro", value: 12}, {name: "Las Condes", value: 9}, {name: "Antofagasta", value: 7}, {name: "Temuco", value: 5}];
+                    const width = 250, height = 200, margin = { top: 20, right: 20, bottom: 60, left: 40 };
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+                    const x = d3.scaleBand().range([0, width - margin.left - margin.right]).domain(data.map(d => d.name)).padding(0.3);
+                    const y = d3.scaleLinear().range([height - margin.top - margin.bottom, 0]).domain([0, d3.max(data, d => d.value)]);
+                    svg.append("g").attr("transform", `translate(0,${height - margin.top - margin.bottom})`).call(d3.axisBottom(x)).selectAll("text").attr("transform", "translate(-10,0)rotate(-45)").style("text-anchor", "end");
+                    svg.append("g").call(d3.axisLeft(y).ticks(5));
+                    svg.selectAll(".bar").data(data).enter().append("rect").attr("x", d => x(d.name)).attr("width", x.bandwidth()).attr("y", d => y(d.value)).attr("height", d => height - margin.top - margin.bottom - y(d.value)).attr("fill", "#0e7490");
+                }
+            }
+            
+            function drawVBarModelos() {
+                const container = d3.select("#v-bar-chart-modelos");
+                if (container.select("svg").empty()){
+                    const data = [{name: "Onix", value: 15}, {name: "Tracker", value: 8}, {name: "Groove", value: 6}, {name: "N400", value: 4}];
+                    const width = 250, height = 200, margin = { top: 20, right: 20, bottom: 60, left: 40 };
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+                    const x = d3.scaleBand().range([0, width - margin.left - margin.right]).domain(data.map(d => d.name)).padding(0.3);
+                    const y = d3.scaleLinear().range([height - margin.top - margin.bottom, 0]).domain([0, d3.max(data, d => d.value)]);
+                    svg.append("g").attr("transform", `translate(0,${height - margin.top - margin.bottom})`).call(d3.axisBottom(x)).selectAll("text").attr("transform", "translate(-10,0)rotate(-45)").style("text-anchor", "end");
+                    svg.append("g").call(d3.axisLeft(y).ticks(5));
+                    svg.selectAll(".bar").data(data).enter().append("rect").attr("x", d => x(d.name)).attr("width", x.bandwidth()).attr("y", d => y(d.value)).attr("height", d => height - margin.top - margin.bottom - y(d.value)).attr("fill", "#0e7490");
+                }
+            }
+
+            function drawHBarResolucion() {
+                const container = d3.select("#h-bar-chart-resolucion");
+                if (container.select("svg").empty()){
+                    const data = [{name: "J. Pérez", value: 2.5}, {name: "A. González", value: 3.1}, {name: "C. Muñoz", value: 1.8}];
+                    data.sort((a,b) => a.value - b.value);
+                    const width = 250, height = 200, margin = { top: 20, right: 20, bottom: 20, left: 80 };
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+                    const y = d3.scaleBand().range([0, height - margin.top - margin.bottom]).domain(data.map(d => d.name)).padding(0.2);
+                    const x = d3.scaleLinear().range([0, width - margin.left - margin.right]).domain([0, d3.max(data, d => d.value)]);
+                    svg.append("g").call(d3.axisLeft(y));
+                    svg.append("g").attr("transform", `translate(0,${height - margin.top - margin.bottom})`).call(d3.axisBottom(x).ticks(4).tickFormat(d => d + " días"));
+                    svg.selectAll(".bar").data(data).enter().append("rect").attr("y", d => y(d.name)).attr("height", y.bandwidth()).attr("x", 0).attr("width", d => x(d.value)).attr("fill", "#0e7490");
+                }
+            }
+
+            function drawAreaChartCrecimiento() {
+                const container = d3.select("#area-chart-crecimiento");
+                if (container.select("svg").empty()){
+                    const data = [{month: "Ene", value: 12000}, {month: "Feb", value: 12500}, {month: "Mar", value: 13200}, {month: "Abr", value: 14000}, {month: "May", value: 14800}, {month: "Jun", value: 15500}];
+                    const width = 400, height = 200, margin = { top: 20, right: 20, bottom: 30, left: 50 };
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+                    const x = d3.scaleBand().range([0, width - margin.left - margin.right]).domain(data.map(d => d.month)).padding(0.1);
+                    const y = d3.scaleLinear().range([height - margin.top - margin.bottom, 0]).domain([11000, d3.max(data, d => d.value)]);
+                    svg.append("g").attr("transform", `translate(0,${height - margin.top - margin.bottom})`).call(d3.axisBottom(x));
+                    svg.append("g").call(d3.axisLeft(y).ticks(4).tickFormat(d => `${d/1000}k`));
+                    const area = d3.area().x(d => x(d.month) + x.bandwidth()/2).y0(height - margin.top - margin.bottom).y1(d => y(d.value));
+                    svg.append("path").datum(data).attr("fill", "#67e8f9").attr("d", area);
+                    const line = d3.line().x(d => x(d.month) + x.bandwidth()/2).y(d => y(d.value));
+                    svg.append("path").datum(data).attr("fill", "none").attr("stroke", "#0e7490").attr("stroke-width", 2).attr("d", line);
+                }
+            }
+
+            function drawAreaChartEngagement() {
+                const container = d3.select("#area-chart-engagement");
+                if (container.select("svg").empty()){
+                    const data = [{month: "Ene", value: 2.1}, {month: "Feb", value: 2.5}, {month: "Mar", value: 2.3}, {month: "Abr", value: 2.8}, {month: "May", value: 3.1}, {month: "Jun", value: 2.9}];
+                    const width = 400, height = 200, margin = { top: 20, right: 20, bottom: 30, left: 50 };
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+                    const x = d3.scaleBand().range([0, width - margin.left - margin.right]).domain(data.map(d => d.month)).padding(0.1);
+                    const y = d3.scaleLinear().range([height - margin.top - margin.bottom, 0]).domain([1.5, d3.max(data, d => d.value)]);
+                    svg.append("g").attr("transform", `translate(0,${height - margin.top - margin.bottom})`).call(d3.axisBottom(x));
+                    svg.append("g").call(d3.axisLeft(y).ticks(4).tickFormat(d => `${d}%`));
+                    const area = d3.area().x(d => x(d.month) + x.bandwidth()/2).y0(height - margin.top - margin.bottom).y1(d => y(d.value));
+                    svg.append("path").datum(data).attr("fill", "#67e8f9").attr("d", area);
+                    const line = d3.line().x(d => x(d.month) + x.bandwidth()/2).y(d => y(d.value));
+                    svg.append("path").datum(data).attr("fill", "none").attr("stroke", "#0e7490").attr("stroke-width", 2).attr("d", line);
+                }
+            }
+            
+            function drawGroupedBarChart() {
+                const container = d3.select("#grouped-bar-chart-competencia");
+                if (container.select("svg").empty()){
+                    const data = [
+                        { brand: "Chevrolet", growth: 4.5, engagement: 3.1 }, { brand: "Ford", growth: 3.8, engagement: 2.8 },
+                        { brand: "Toyota", growth: 4.1, engagement: 2.5 }, { brand: "Kia", growth: 5.2, engagement: 3.5 },
+                        { brand: "Hyundai", growth: 4.8, engagement: 3.3 }, { brand: "Nissan", growth: 3.5, engagement: 2.6 }
+                    ];
+                    const width = 800, height = 300, margin = { top: 20, right: 20, bottom: 30, left: 40 };
+                    const svg = container.append("svg").attr("width", width).attr("height", height).append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+                    const groups = data.map(d => d.brand);
+                    const subgroups = ["growth", "engagement"];
+                    const x0 = d3.scaleBand().domain(groups).range([0, width - margin.left - margin.right]).padding(0.2);
+                    const x1 = d3.scaleBand().domain(subgroups).range([0, x0.bandwidth()]).padding(0.05);
+                    const y = d3.scaleLinear().domain([0, 6]).range([height - margin.top - margin.bottom, 0]);
+                    const color = d3.scaleOrdinal().domain(subgroups).range(['#0e7490','#67e8f9']);
+                    svg.append("g").attr("transform", `translate(0, ${height - margin.top - margin.bottom})`).call(d3.axisBottom(x0));
+                    svg.append("g").call(d3.axisLeft(y).tickFormat(d => `${d}%`));
+                    svg.append("g").selectAll("g").data(data).enter().append("g").attr("transform", d => `translate(${x0(d.brand)},0)`)
+                        .selectAll("rect").data(d => subgroups.map(key => ({key: key, value: d[key]}))).enter().append("rect")
+                        .attr("x", d => x1(d.key)).attr("y", d => y(d.value)).attr("width", x1.bandwidth()).attr("height", d => height - margin.top - margin.bottom - y(d.value)).attr("fill", d => color(d.key));
+                }
+            }
+
+
+            // Observadores para dibujar gráficos
+            const observers = {};
+            function setupObserver(pageId, drawingFunctions) {
+                if (observers[pageId]) return;
+                const page = document.getElementById(pageId);
+                if (!page) return;
+                observers[pageId] = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (mutation.attributeName === 'class' && !mutation.target.classList.contains('hidden')) {
+                            drawingFunctions.forEach(func => func());
+                        }
+                    });
+                });
+                observers[pageId].observe(page, { attributes: true });
+            }
+
+            setupObserver('page-sac', [drawGaugeChart, drawBarChart]);
+            setupObserver('page-leads', [drawDonutChart, drawHBarChart]);
+            setupObserver('page-reclamos', [drawPieReclamos, drawVBarSucursales, drawVBarModelos, drawHBarResolucion]);
+            setupObserver('page-telemetria', [drawAreaChartCrecimiento, drawAreaChartEngagement, drawGroupedBarChart]);
         });
     </script>
 </body>
